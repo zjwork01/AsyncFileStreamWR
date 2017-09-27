@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>异步读写数据</title>
+    <style type="text/css">
+        textarea{
+            width:300px;
+            height:80px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <span>
+            选择文件：
+        </span>
+        <input type="text" id="rfilepath" />
+        <input id="read" type="button" value="读取" />
+        <textarea id="rarea"></textarea>
+    </div>
+    <hr />
+    <div>
+        <span>
+            选择文件：
+        </span>
+        <input type="text" id="wfilepath" />
+        <input id="write" type="button" value="写入" />
+        <textarea id="warea"></textarea>
+        <hr />
+    </div>
+</body>
+</html>
+<script type="text/javascript" src="../Script/jquery-1.8.3.min.js"></script>
+<script>
+    $(function () {
+        //读取文件
+        $('#read').click(function () {
+            var filepath = $('#rfilepath').val();
+            $.ajax({
+                data: { "filepath": filepath, "type": "read" },
+                dataType: "JSON",
+                type: "POST",
+                url: "../ashxs/Index.ashx",
+                success: function (msg) {
+                    if (msg.result == "success") {
+                        $('#rarea').val(msg.version);
+                    } else {
+                        $('#rarea').val("读取失败");
+                    }
+                }
+            });
+        });
+
+        //写入文件
+        $('#write').click(function () {
+            var filepath = $('#wfilepath').val();
+            var senddata = $('#warea').val();
+            $.ajax({
+                data: { "filepath": filepath, "type": "write", "data": senddata },
+                dataType: "JSON",
+                type: "POST",
+                url: "../ashxs/Index.ashx",
+                success: function (msg) {
+                    if (msg.result == "success") {
+                        alert("写入成功");
+                    } else {
+                        $('#warea').val("写入失败");
+                    }
+                }
+            });
+        });
+    })
+</script>

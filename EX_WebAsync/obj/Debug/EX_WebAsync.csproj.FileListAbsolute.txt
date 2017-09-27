@@ -1,0 +1,6 @@
+D:\code\TCP监听（8.24）服务器承载\TCP监听（8.24）服务器承载\EX_WebAsync\bin\EX_WebAsync.dll.config
+D:\code\TCP监听（8.24）服务器承载\TCP监听（8.24）服务器承载\EX_WebAsync\bin\EX_WebAsync.dll
+D:\code\TCP监听（8.24）服务器承载\TCP监听（8.24）服务器承载\EX_WebAsync\bin\EX_WebAsync.pdb
+D:\code\TCP监听（8.24）服务器承载\TCP监听（8.24）服务器承载\EX_WebAsync\obj\Debug\EX_WebAsync.csprojResolveAssemblyReference.cache
+D:\code\TCP监听（8.24）服务器承载\TCP监听（8.24）服务器承载\EX_WebAsync\obj\Debug\EX_WebAsync.dll
+D:\code\TCP监听（8.24）服务器承载\TCP监听（8.24）服务器承载\EX_WebAsync\obj\Debug\EX_WebAsync.pdb
